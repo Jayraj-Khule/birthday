@@ -8,9 +8,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+// Ensure your Vercel URL is allowed by CORS!
+app.use(cors({
+  origin: ["https://birthday-hazel.vercel.app", "http://localhost:5173", "https://nupurrbirthday.vercel.app/"] // Add your actual Vercel domain here!
+}));
 app.use(express.json());
-
+  
 // Fake database / Secret code
 const SECRET_PASSCODE = '0504';
 
