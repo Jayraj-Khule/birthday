@@ -81,22 +81,22 @@ function PasscodePage() {
 
         {/* Right Side: Passcode */}
         <div className="flex flex-col items-center flex-1 w-full max-w-[400px] relative">
-          <h2 className="text-white text-4xl mb-6 font-bold tracking-wider text-center drop-shadow-md">
+          <h2 className="text-white text-3xl md:text-4xl mb-6 font-bold tracking-wider text-center drop-shadow-md">
             Entre a passcode
           </h2>
 
-          <div className="flex gap-4 mb-8">
+          <div className="flex gap-3 md:gap-4 mb-6 md:mb-8">
             {[...Array(4)].map((_, i) => (
               <div 
                 key={i} 
-                className="w-16 h-16 bg-white border-4 border-white rounded-xl flex items-center justify-center text-5xl text-[#a40000] font-black shadow-inner overflow-hidden"
+                className="w-14 h-14 md:w-16 md:h-16 bg-white border-4 border-white rounded-xl flex items-center justify-center text-4xl md:text-5xl text-[#a40000] font-black shadow-inner overflow-hidden"
               >
                 {passcode[i] ? '*' : ''}
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-3 gap-x-6 gap-y-4 max-w-[300px]">
+          <div className="grid grid-cols-3 gap-x-4 md:gap-x-6 gap-y-4 max-w-[300px]">
             {['1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '0', '#'].map((item) => (
               <button
                 key={item}
@@ -104,14 +104,14 @@ function PasscodePage() {
                    if (item === '*' || item === '#') handleBackspace();
                    else handleKeyPress(item);
                 }}
-                className="w-20 h-20 bg-[#fde9e9] rounded-full text-[#a40000] text-4xl font-black shadow-lg hover:bg-white active:scale-95 transition-transform flex items-center justify-center"
+                className="w-16 h-16 md:w-20 md:h-20 bg-[#fde9e9] rounded-full text-[#a40000] text-3xl md:text-4xl font-black shadow-lg hover:bg-white active:scale-95 transition-transform flex items-center justify-center"
               >
                 {item}
               </button>
             ))}
           </div>
 
-          <div className="mt-8 text-2xl drop-shadow-md tracking-wide font-bold">
+          <div className="mt-8 text-xl md:text-2xl drop-shadow-md tracking-wide font-bold">
              hint- its are fav code
           </div>
           
