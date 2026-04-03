@@ -293,6 +293,11 @@ function GiftPage() {
                      {num === 4 && "Looking beautiful 💛"}
                      {num === 5 && "Pretty as always 🌸"}
                      {num === 6 && "Everything ❤️"}
+                     
+                     {/* Filename display constraint to mobile view for debugging/visibility */}
+                     <div className="text-sm text-gray-400 font-normal mt-2 md:hidden">
+                        {fileName}
+                     </div>
                    </div>
                  </div>
                </div>
