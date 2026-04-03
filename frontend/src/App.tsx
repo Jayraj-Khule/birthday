@@ -267,13 +267,13 @@ function GiftPage() {
           {/* Vertical connecting line for desktop */}
           <div className="absolute top-10 bottom-10 w-1 bg-pink-200 left-1/2 transform -translate-x-1/2 z-0 hidden md:block"></div>
 
-          {['first_photo.jpeg', 'second_photo.jpeg', 'third_photo.jpeg', 'fourth_photo.jpeg', 'fifth_photo.jpeg', 'sixth.jpeg'].map((fileName, idx) => {
+          {['first_photo.jpeg', 'Second.jpeg', 'Third.jpeg', 'fourth.jpeg', 'fifth.jpeg', 'sixth.jpeg'].map((fileName, idx) => {
              const num = idx + 1;
              return (
              <div key={num} className="relative z-10 w-full flex flex-col md:flex-row items-center justify-center opacity-0 animate-fadeInUp" style={{ animationDelay: `${idx * 200}ms`, animationFillMode: 'forwards' }}>
                
                {/* Desktop alternating layout wrapper */}
-               <div className={`w-full md:w-1/2 flex justify-center ${idx % 2 === 0 ? 'md:justify-end md:pr-12' : 'md:justify-start md:pl-12'} md:order-${idx % 2 === 0 ? '1' : '2'}`}>
+               <div className={`w-full md:w-1/2 flex justify-center ${idx % 2 === 0 ? 'md:justify-end md:pr-12 md:order-1' : 'md:justify-start md:pl-12 md:order-2'}`}>
                  <div className={`bg-white p-3 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform ${idx % 2 === 0 ? '-rotate-3' : 'rotate-3'} hover:rotate-0 hover:scale-105 transition-all duration-300 w-[280px] sm:w-[350px] md:w-[400px]`}>
                    <div className="w-full bg-gray-100 overflow-hidden rounded relative">
                       <img 
@@ -301,7 +301,7 @@ function GiftPage() {
                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-pink-400 rounded-full border-4 border-white shadow-md z-20"></div>
 
                {/* Empty spacer for the other half on Desktop */}
-               <div className={`hidden md:block md:w-1/2 md:order-${idx % 2 === 0 ? '2' : '1'}`}></div>
+               <div className={`hidden md:block md:w-1/2 ${idx % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}></div>
                
                {num < 6 && (
                  <div className="text-4xl md:text-6xl mt-12 text-pink-300 animate-bounce md:hidden">
