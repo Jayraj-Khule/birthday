@@ -94,10 +94,10 @@ function PasscodePage() {
       <FloatingBackground />
 
       {/* Background Scattered Polaroids */}
-      <div className="absolute inset-0 pointer-events-none z-0 hidden md:block">
+      <div className="absolute inset-0 pointer-events-none z-0">
         {/* Top Left */}
-        <div className="absolute -top-6 md:top-8 -left-10 md:left-12 opacity-0 animate-fadeInUp [animation-delay:100ms] hover:z-50 pointer-events-auto">
-          <div className="transform -rotate-12 bg-white p-2 pb-10 shadow-2xl rounded-sm w-[160px] md:w-[200px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+        <div className="absolute top-2 md:top-8 left-2 md:left-12 opacity-0 animate-fadeInUp [animation-delay:100ms] hover:z-50 pointer-events-auto">
+          <div className="transform -rotate-12 bg-white p-1.5 md:p-2 pb-6 md:pb-10 shadow-2xl rounded-sm w-[110px] md:w-[200px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
             <div className="w-full aspect-[4/5] bg-gray-200 overflow-hidden rounded">
               <img src="/photo3.png" alt="memory 3" className="w-full h-full object-cover" />
             </div>
@@ -105,8 +105,8 @@ function PasscodePage() {
         </div>
 
         {/* Top Right */}
-        <div className="absolute -top-4 md:top-12 -right-8 md:right-16 opacity-0 animate-fadeInUp [animation-delay:300ms] hover:z-50 pointer-events-auto">
-          <div className="transform rotate-6 bg-white p-2 pb-10 shadow-2xl rounded-sm w-[150px] md:w-[220px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+        <div className="absolute top-4 md:top-12 right-2 md:right-16 opacity-0 animate-fadeInUp [animation-delay:300ms] hover:z-50 pointer-events-auto">
+          <div className="transform rotate-6 bg-white p-1.5 md:p-2 pb-6 md:pb-10 shadow-2xl rounded-sm w-[100px] md:w-[220px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
             <div className="w-full aspect-square bg-gray-200 overflow-hidden rounded">
               <img src="/photo4.png" alt="memory 4" className="w-full h-full object-cover" />
             </div>
@@ -114,8 +114,8 @@ function PasscodePage() {
         </div>
 
         {/* Bottom Left */}
-        <div className="absolute bottom-4 left-2 md:bottom-20 md:left-24 opacity-0 animate-fadeInUp [animation-delay:500ms] hidden sm:block hover:z-50 pointer-events-auto">
-          <div className="transform rotate-12 bg-white p-2 pb-10 shadow-2xl rounded-sm w-[140px] md:w-[190px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+        <div className="absolute bottom-4 left-2 md:bottom-20 md:left-24 opacity-0 animate-fadeInUp [animation-delay:500ms] hover:z-50 pointer-events-auto">
+          <div className="transform rotate-12 bg-white p-1.5 md:p-2 pb-6 md:pb-10 shadow-2xl rounded-sm w-[100px] md:w-[190px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
             <div className="w-full aspect-square bg-gray-200 overflow-hidden rounded">
               <img src="/photo5.png" alt="memory 5" className="w-full h-full object-cover" />
             </div>
@@ -123,8 +123,8 @@ function PasscodePage() {
         </div>
 
         {/* Bottom Right */}
-        <div className="absolute -bottom-10 md:bottom-12 -right-6 md:right-24 opacity-0 animate-fadeInUp [animation-delay:700ms] hover:z-50 pointer-events-auto">
-          <div className="transform -rotate-12 bg-white p-2 pb-10 shadow-2xl rounded-sm w-[170px] md:w-[210px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+        <div className="absolute bottom-12 md:bottom-12 right-2 md:right-24 opacity-0 animate-fadeInUp [animation-delay:700ms] hover:z-50 pointer-events-auto">
+          <div className="transform -rotate-12 bg-white p-1.5 md:p-2 pb-6 md:pb-10 shadow-2xl rounded-sm w-[110px] md:w-[210px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
             <div className="w-full aspect-[4/5] bg-gray-200 overflow-hidden rounded">
               <img src="/photo6.png" alt="memory 6" className="w-full h-full object-cover" />
             </div>
