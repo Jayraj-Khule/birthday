@@ -233,7 +233,7 @@ function SuccessPage() {
       {/* Next Button */}
       <button 
         onClick={() => navigate('/next')}
-        className="absolute bottom-8 right-8 md:bottom-12 md:right-16 bg-black text-white px-10 py-3 rounded-full text-2xl font-bold tracking-wider hover:scale-105 active:scale-95 transition-transform shadow-xl z-20 opacity-0 animate-fadeInUp [animation-delay:600ms]"
+        className="absolute bottom-24 right-8 md:bottom-12 md:right-16 bg-black text-white px-10 py-3 rounded-full text-2xl font-bold tracking-wider hover:scale-105 active:scale-95 transition-transform shadow-xl z-20 opacity-0 animate-fadeInUp [animation-delay:600ms]"
       >
         NEXT
       </button>
