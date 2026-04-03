@@ -275,11 +275,11 @@ function GiftPage() {
                {/* Wrapper: Stacked on mobile, alternating on desktop */}
                <div className={`w-full md:w-1/2 flex justify-center ${idx % 2 === 0 ? 'md:justify-end md:pr-12 md:order-1' : 'md:justify-start md:pl-12 md:order-2'}`}>
                  <div className={`bg-white p-3 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform ${idx % 2 === 0 ? '-rotate-3 md:-rotate-3' : 'rotate-3 md:rotate-3'} hover:rotate-0 hover:scale-105 transition-all duration-300 w-[260px] sm:w-[320px] md:w-[400px]`}>
-                   <div className="w-full bg-gray-100 overflow-hidden rounded relative">
+                   <div className="w-full bg-gray-100 overflow-hidden rounded relative min-h-[250px] flex items-center justify-center">
                       <img 
                         src={`/${fileName}`} 
                         alt={`Journey ${num}`} 
-                        className="w-full h-auto object-contain max-h-[50vh] md:max-h-[400px]" 
+                        className="w-full max-w-full h-auto object-contain max-h-[50vh] md:max-h-[400px] block" 
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?q=80&w=400&auto=format&fit=crop";
