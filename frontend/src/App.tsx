@@ -267,7 +267,9 @@ function GiftPage() {
           {/* Vertical connecting line for desktop */}
           <div className="absolute top-10 bottom-10 w-1 bg-pink-200 left-1/2 transform -translate-x-1/2 z-0 hidden md:block"></div>
 
-          {[1, 2, 3, 4, 5].map((num, idx) => (
+          {['first_photo.jpeg', 'second_photo.jpeg', 'third_photo.jpeg', 'fourth_photo.jpeg', 'fifth_photo.jpeg', 'sixth.jpeg'].map((fileName, idx) => {
+             const num = idx + 1;
+             return (
              <div key={num} className="relative z-10 w-full flex flex-col md:flex-row items-center justify-center opacity-0 animate-fadeInUp" style={{ animationDelay: `${idx * 200}ms`, animationFillMode: 'forwards' }}>
                
                {/* Desktop alternating layout wrapper */}
@@ -275,7 +277,7 @@ function GiftPage() {
                  <div className={`bg-white p-3 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform ${idx % 2 === 0 ? '-rotate-3' : 'rotate-3'} hover:rotate-0 hover:scale-105 transition-all duration-300 w-[280px] sm:w-[350px] md:w-[400px]`}>
                    <div className="w-full bg-gray-100 overflow-hidden rounded relative">
                       <img 
-                        src={`/journey${num}.jpg`} 
+                        src={`/${fileName}`} 
                         alt={`Journey ${num}`} 
                         className="w-full h-auto object-contain max-h-[60vh] md:max-h-[400px]" 
                         onError={(e) => {
@@ -290,6 +292,7 @@ function GiftPage() {
                      {num === 3 && "Sweet Smile 😊"}
                      {num === 4 && "Looking beautiful 💛"}
                      {num === 5 && "Pretty as always 🌸"}
+                     {num === 6 && "My everything ❤️"}
                    </div>
                  </div>
                </div>
@@ -300,13 +303,13 @@ function GiftPage() {
                {/* Empty spacer for the other half on Desktop */}
                <div className={`hidden md:block md:w-1/2 md:order-${idx % 2 === 0 ? '2' : '1'}`}></div>
                
-               {num < 5 && (
+               {num < 6 && (
                  <div className="text-4xl md:text-6xl mt-12 text-pink-300 animate-bounce md:hidden">
                    ↓
                  </div>
                )}
              </div>
-          ))}
+          )})}
         </div>
 
         <button 
