@@ -57,7 +57,7 @@ function PasscodePage() {
     if (passcode.length === 4) {
       setIsVerifying(true);
       try {
-        const response = await fetch('http://localhost:5000/api/verify-passcode', {
+        const response = await fetch('https://birthday-9xkf.onrender.com/api/verify-passcode', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
