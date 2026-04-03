@@ -264,22 +264,22 @@ function GiftPage() {
         </h1>
         
         <div className="flex flex-col items-center gap-12 md:gap-24 w-full max-w-4xl pb-24 relative">
-          {/* Vertical connecting line for desktop only */}
-          <div className="absolute top-10 bottom-10 w-1 bg-pink-200 left-1/2 transform -translate-x-1/2 z-0 hidden md:block"></div>
+          {/* Vertical connecting line for both mobile & desktop */}
+          <div className="absolute top-8 bottom-10 w-1 bg-pink-200 left-1/2 transform -translate-x-1/2 z-0 block"></div>
 
           {['first_photo.jpeg', 'Second.jpeg', 'Third.jpeg', 'fourth.jpeg', 'fifth.jpeg', 'sixth.jpeg'].map((fileName, idx) => {
              const num = idx + 1;
              return (
-             <div key={num} className="relative z-10 w-full flex flex-col md:flex-row items-center justify-center mb-8 md:mb-0 pb-4">
+             <div key={num} className="relative z-10 w-full flex flex-row items-center justify-center mb-0 md:mb-0 pb-12">
                
-               {/* Wrapper: Stacked on mobile, alternating on desktop */}
-               <div className={`w-full md:w-1/2 flex justify-center ${idx % 2 === 0 ? 'md:justify-end md:pr-12 md:order-1' : 'md:justify-start md:pl-12 md:order-2'}`}>
-                 <div className={`bg-white p-3 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform ${idx % 2 === 0 ? '-rotate-3 md:-rotate-3' : 'rotate-3 md:rotate-3'} hover:rotate-0 hover:scale-105 transition-all duration-300 w-[260px] sm:w-[320px] md:w-[400px]`}>
-                   <div className="w-full bg-gray-100 overflow-hidden rounded relative min-h-[250px] flex items-center justify-center">
+               {/* Alternating layout wrapper */}
+               <div className={`w-1/2 flex justify-center ${idx % 2 === 0 ? 'justify-end pr-4 md:pr-12 order-1' : 'justify-start pl-4 md:pl-12 order-2'}`}>
+                 <div className={`bg-white p-2 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform ${idx % 2 === 0 ? '-rotate-3' : 'rotate-3'} hover:rotate-0 hover:scale-105 transition-all duration-300 w-[140px] sm:w-[260px] md:w-[400px]`}>
+                   <div className="w-full bg-gray-100 overflow-hidden rounded relative min-h-[120px] md:min-h-[250px] flex items-center justify-center">
                       <img 
-                        src={`/${fileName}?v=1`} 
+                        src={`/${fileName}?v=2`} 
                         alt={`Journey ${num}`} 
-                        className="w-full max-w-full h-auto object-contain max-h-[50vh] md:max-h-[400px] block" 
+                        className="w-full max-w-full h-auto object-contain max-h-[30vh] md:max-h-[400px] block" 
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           // Fallback removed to prevent the "math homework" replacing actual images during loading/caching delays
@@ -287,7 +287,7 @@ function GiftPage() {
                         }}
                       />
                    </div>
-                   <div className="text-center mt-4 md:mt-6 text-xl md:text-3xl font-bold text-gray-700 tracking-wide">
+                   <div className="text-center mt-3 md:mt-6 text-sm sm:text-xl md:text-3xl font-bold text-gray-700 tracking-wide">
                      {num === 1 && "200X..."}
                      {num === 2 && "Growing Up ✨"}
                      {num === 3 && "Sweet Smile 😊"}
@@ -296,25 +296,19 @@ function GiftPage() {
                      {num === 6 && "Everything ❤️"}
                      
                      {/* Filename display constraint to mobile view for debugging/visibility */}
-                     <div className="text-sm text-gray-400 font-normal mt-2 md:hidden">
+                     <div className="text-[10px] sm:text-sm text-gray-400 font-normal mt-1 md:mt-2 md:hidden">
                         {fileName}
                      </div>
                    </div>
                  </div>
                </div>
 
-               {/* Center Timeline Dot for Desktop */}
-               <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-pink-400 rounded-full border-4 border-white shadow-md z-20"></div>
+               {/* Center Timeline Dot for all screens */}
+               <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 md:w-6 md:h-6 bg-pink-400 rounded-full border-2 md:border-4 border-white shadow-md z-20"></div>
 
-               {/* Empty spacer for the other half on Desktop */}
-               <div className={`hidden md:block md:w-1/2 ${idx % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}></div>
+               {/* Empty spacer for the other half */}
+               <div className={`w-1/2 ${idx % 2 === 0 ? 'order-2' : 'order-1'}`}></div>
                
-               {/* Arrow for Mobile only */}
-               {num < 6 && (
-                 <div className="text-4xl mt-8 text-pink-300 animate-bounce md:hidden">
-                   ↓
-                 </div>
-               )}
              </div>
           )})}
         </div>
