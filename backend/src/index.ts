@@ -8,9 +8,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-// Ensure your Vercel URL is allowed by CORS!
+// Enable CORS for all origins, to ensure it works smoothly on all devices and browsers!
 app.use(cors({
-  origin: ["https://birthday-hazel.vercel.app", "http://localhost:5173", "https://nupurrbirthday.vercel.app/"] // Add your actual Vercel domain here!
+  origin: "*"
 }));
 app.use(express.json());
   
