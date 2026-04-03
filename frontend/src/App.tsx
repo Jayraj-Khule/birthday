@@ -273,7 +273,7 @@ function GiftPage() {
              <div key={num} className="relative z-10 w-full flex flex-row items-center justify-center mb-0 md:mb-0 pb-12">
                
                {/* Alternating layout wrapper */}
-               <div className={`w-1/2 flex justify-center ${idx % 2 === 0 ? 'justify-end pr-4 md:pr-12 order-1' : 'justify-start pl-4 md:pl-12 order-2'}`}>
+               <div className={`w-1/2 flex ${idx % 2 === 0 ? 'justify-end pr-4 md:pr-12 order-1' : 'justify-start pl-4 md:pl-12 order-2'}`}>
                  <div className={`bg-white p-2 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform ${idx % 2 === 0 ? '-rotate-3' : 'rotate-3'} hover:rotate-0 hover:scale-105 transition-all duration-300 w-[140px] sm:w-[260px] md:w-[400px]`}>
                    <div className="w-full bg-gray-100 overflow-hidden rounded relative min-h-[120px] md:min-h-[250px] flex items-center justify-center">
                       <img 
