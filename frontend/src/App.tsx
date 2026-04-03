@@ -132,16 +132,16 @@ function PasscodePage() {
         </div>
       </div>
 
-      <div className="w-full max-w-5xl flex gap-12 flex-row items-start justify-center relative z-10">
+      <div className="w-full max-w-[1200px] flex gap-2 sm:gap-6 md:gap-12 flex-row items-center md:items-start justify-center relative z-10 px-2 md:px-0">
 
         {/* Left Side: Photo */}
-        <div className="relative z-10 mx-0 opacity-0 animate-fadeInUp [animation-delay:900ms] flex flex-col gap-14">
+        <div className="relative z-10 mx-0 opacity-0 animate-fadeInUp [animation-delay:900ms] flex flex-col gap-6 sm:gap-10 md:gap-14">
           
           {/* Main Original Image */}
-          <div className="transform -rotate-12 hover:rotate-0 transition-transform duration-300 z-10 hover:z-30">
-            <div className="bg-white p-4 pb-14 shadow-2xl rounded-sm w-[260px] h-[300px] relative">
-              <div className="absolute -top-6 -right-6 text-blue-300 drop-shadow-lg z-20 animate-wiggle">
-                  <svg width="50" height="50" viewBox="0 0 24 24" fill="#a5d8ff" stroke="#a5d8ff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">   
+          <div className="transform -rotate-12 hover:rotate-0 transition-transform duration-300 z-10 hover:z-30 mt-4 md:mt-0">
+            <div className="bg-white p-2 md:p-4 pb-8 md:pb-14 shadow-xl md:shadow-2xl rounded-sm w-[130px] sm:w-[180px] md:w-[260px] h-[160px] sm:h-[220px] md:h-[300px] relative">
+              <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 text-blue-300 drop-shadow-lg z-20 animate-wiggle">
+                  <svg viewBox="0 0 24 24" fill="#a5d8ff" stroke="#a5d8ff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]">   
                       <path d="M4 22L12 15L20 22V14C20 14 15 18 12 15C9 18 4 14 4 14V22Z" />
                       <circle cx="12" cy="7" r="5" fill="#a5d8ff" />
                   </svg>
@@ -152,14 +152,14 @@ function PasscodePage() {
               </div>
             </div>
 
-            <div className="absolute -bottom-8 -left-8 text-[60px] drop-shadow-lg transition z-20 animate-wiggle">
+            <div className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 text-[40px] md:text-[60px] drop-shadow-lg transition z-20 animate-wiggle">
               🧸
             </div>
           </div>
 
           {/* Additional Image below Teddy */}
           <div className="transform rotate-6 hover:rotate-0 transition-transform duration-300 z-10 hover:z-30">
-            <div className="bg-white p-4 pb-14 shadow-2xl rounded-sm w-[260px] h-[300px] relative">
+            <div className="bg-white p-2 md:p-4 pb-8 md:pb-14 shadow-xl md:shadow-2xl rounded-sm w-[130px] sm:w-[180px] md:w-[260px] h-[160px] sm:h-[220px] md:h-[300px] relative">
               <div className="w-full h-full bg-gray-200 overflow-hidden rounded"> 
                 {/* Fallback to photo1.png or change the src accordingly */}
                 <img src="/photo7.png" alt="memory 1" className="w-full h-full object-cover" />
@@ -169,23 +169,23 @@ function PasscodePage() {
         </div>
 
         {/* Right Side: Passcode */}
-        <div className="flex flex-col items-center flex-1 w-full max-w-[400px] relative opacity-0 animate-fadeInUp [animation-delay:1100ms] mt-10">
-          <h2 className="text-white text-4xl mb-6 font-bold tracking-wider text-center drop-shadow-md">
+        <div className="flex flex-col items-center justify-center flex-1 w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px] relative opacity-0 animate-fadeInUp [animation-delay:1100ms]">
+          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl mb-4 md:mb-6 font-bold tracking-wider text-center drop-shadow-md whitespace-nowrap">
             Entre a passcode
           </h2>
 
-          <div className="flex gap-4 mb-8">
+          <div className="flex gap-2 sm:gap-3 md:gap-4 mb-4 md:mb-8">
             {[...Array(4)].map((_, i) => (
               <div
                 key={i}
-                className={`w-16 h-16 bg-white border-4 border-white rounded-xl flex items-center justify-center text-5xl text-[#a40000] font-black shadow-inner overflow-hidden transition-all duration-200 ${passcode[i] ? 'scale-110 shadow-pink-200 shadow-md' : 'scale-100'}`}
+                className={`w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white border-[3px] md:border-4 border-white rounded-lg md:rounded-xl flex items-center justify-center text-3xl sm:text-4xl md:text-5xl text-[#a40000] font-black shadow-inner overflow-hidden transition-all duration-200 ${passcode[i] ? 'scale-110 shadow-pink-200 shadow-md' : 'scale-100'}`}
               >
                 {passcode[i] ? '*' : ''}
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-3 gap-x-6 gap-y-4 max-w-[300px]">      
+          <div className="grid grid-cols-3 gap-x-3 sm:gap-x-4 md:gap-x-6 gap-y-3 sm:gap-y-4 max-w-[250px] md:max-w-[300px]">      
             {['1', '2', '3', '4', '5', '6', '7', '8', '9', '⌫', '0', 'Next'].map((item) => (
               <button
                 key={item}
@@ -195,14 +195,14 @@ function PasscodePage() {
                    else handleKeyPress(item);
                 }}
                 disabled={isVerifying || (item === 'Next' && passcode.length < 4)}
-                className={`w-20 h-20 bg-[#fde9e9] rounded-full text-[#a40000] ${item === 'Next' || item === '⌫' ? 'text-2xl font-bold' : 'text-4xl font-black'} shadow-lg hover:bg-white active:scale-95 hover:shadow-xl transition-all flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed`}
+                className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-[#fde9e9] rounded-full text-[#a40000] ${item === 'Next' || item === '⌫' ? 'text-lg sm:text-xl md:text-2xl font-bold' : 'text-2xl sm:text-3xl md:text-4xl font-black'} shadow-md md:shadow-lg hover:bg-white active:scale-95 hover:shadow-xl transition-all flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 {item}
               </button>
             ))}
           </div>
 
-          <div className="mt-8 text-2xl drop-shadow-md tracking-wide font-bold opacity-80">
+          <div className="mt-4 md:mt-8 text-lg sm:text-xl md:text-2xl drop-shadow-md tracking-wide font-bold opacity-80 whitespace-nowrap">
              hint- its are fav code
           </div>
         </div>
