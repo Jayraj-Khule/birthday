@@ -315,7 +315,7 @@ function GiftPage() {
           Gift for you
         </h1>
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 w-full">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-1 md:gap-12 w-full">
           {[...Array(3)].map((_, i) => (
             <div 
               key={i}
