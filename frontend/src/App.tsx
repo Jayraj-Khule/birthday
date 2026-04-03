@@ -244,6 +244,7 @@ function SuccessPage() {
 
 function GiftPage() {
   const [opened, setOpened] = useState(false);
+  const [showJourney, setShowJourney] = useState(false);
   const [blown, setBlown] = useState(false);
   const [fadeOutWish, setFadeOutWish] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -254,6 +255,59 @@ function GiftPage() {
       setBlown(true);
     }, 500);
   };
+
+  if (showJourney) {
+    return (
+      <div className="min-h-[100dvh] bg-[#fdf2f8] flex flex-col items-center p-4 md:p-8 relative font-['Comic_Neue'] selection:bg-pink-200 overflow-x-hidden overflow-y-auto">
+        <h1 className="text-4xl md:text-6xl font-bold mt-4 md:mt-8 mb-8 text-[#ff729f] drop-shadow-sm text-center">
+          The Journey 🌸
+        </h1>
+        
+        <div className="flex flex-col items-center gap-12 md:gap-24 w-full max-w-4xl pb-24 relative">
+          {/* Vertical connecting line for desktop */}
+          <div className="absolute top-10 bottom-10 w-1 bg-pink-200 left-1/2 transform -translate-x-1/2 z-0 hidden md:block"></div>
+
+          {[1, 2, 3, 4, 5].map((num, idx) => (
+             <div key={num} className="relative z-10 w-full flex flex-col items-center opacity-0 animate-fadeInUp" style={{ animationDelay: `${idx * 200}ms`, animationFillMode: 'forwards' }}>
+               <div className={`bg-white p-3 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform ${idx % 2 === 0 ? '-rotate-3' : 'rotate-3'} hover:rotate-0 hover:scale-105 transition-all duration-300 w-[280px] sm:w-[350px] md:w-[450px]`}>
+                 <div className="w-full bg-gray-100 overflow-hidden rounded relative">
+                    <img 
+                      src={`/journey${num}.jpg`} 
+                      alt={`Journey ${num}`} 
+                      className="w-full h-auto object-contain max-h-[60vh] md:max-h-[500px]" 
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?q=80&w=400&auto=format&fit=crop";
+                      }}
+                    />
+                 </div>
+                 <div className="text-center mt-4 md:mt-6 text-xl md:text-3xl font-bold text-gray-700 tracking-wide">
+                   {num === 1 && "200X..."}
+                   {num === 2 && "Growing Up ✨"}
+                   {num === 3 && "Sweet Smile 😊"}
+                   {num === 4 && "Looking beautiful 💛"}
+                   {num === 5 && "Pretty as always 🌸"}
+                 </div>
+               </div>
+               
+               {num < 5 && (
+                 <div className="text-4xl md:text-6xl mt-12 text-pink-300 animate-bounce md:hidden">
+                   ↓
+                 </div>
+               )}
+             </div>
+          ))}
+        </div>
+
+        <button 
+          onClick={() => setShowJourney(false)}
+          className="fixed bottom-6 bg-[#ff729f] text-white px-10 py-3 md:px-12 md:py-4 rounded-full text-xl md:text-2xl font-bold shadow-[0_4px_14px_0_rgba(255,114,159,0.39)] z-50 hover:bg-[#ff5c8e] hover:shadow-[0_6px_20px_rgba(255,114,159,0.23)] hover:-translate-y-1 active:translate-y-0 transition-all font-['Comic_Neue']"
+        >
+          Back
+        </button>
+      </div>
+    );
+  }
 
   if (opened) {
     return (
@@ -323,6 +377,8 @@ function GiftPage() {
               onClick={() => {
                 if (i === 0) {
                   setOpened(true);
+                } else if (i === 1) {
+                  setShowJourney(true);
                 } else {
                   console.log(`Clicked gift ${i + 1}`);
                 }
