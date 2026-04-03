@@ -90,14 +90,14 @@ function PasscodePage() {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-[#a40000] flex flex-col items-center justify-start md:justify-center p-4 selection:bg-white text-white font-['Comic_Neue'] relative overflow-x-hidden overflow-y-auto"> 
+    <div className="min-h-screen bg-[#a40000] flex items-center justify-center p-4 selection:bg-white text-white font-['Comic_Neue'] relative overflow-hidden"> 
       <FloatingBackground />
 
       {/* Background Scattered Polaroids */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {/* Top Left */}
-        <div className="absolute top-2 md:top-8 left-2 md:left-12 opacity-0 animate-fadeInUp [animation-delay:100ms] hover:z-50 pointer-events-auto">
-          <div className="transform -rotate-12 bg-white p-1.5 md:p-2 pb-6 md:pb-10 shadow-2xl rounded-sm w-[110px] md:w-[200px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+        <div className="absolute -top-6 -left-10 opacity-0 animate-fadeInUp [animation-delay:100ms] hover:z-50 pointer-events-auto">
+          <div className="transform -rotate-12 bg-white p-2 pb-10 shadow-2xl rounded-sm w-[200px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
             <div className="w-full aspect-[4/5] bg-gray-200 overflow-hidden rounded">
               <img src="/photo3.png" alt="memory 3" className="w-full h-full object-cover" />
             </div>
@@ -105,8 +105,8 @@ function PasscodePage() {
         </div>
 
         {/* Top Right */}
-        <div className="absolute top-4 md:top-12 right-2 md:right-16 opacity-0 animate-fadeInUp [animation-delay:300ms] hover:z-50 pointer-events-auto">
-          <div className="transform rotate-6 bg-white p-1.5 md:p-2 pb-6 md:pb-10 shadow-2xl rounded-sm w-[100px] md:w-[220px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+        <div className="absolute -top-4 right-16 opacity-0 animate-fadeInUp [animation-delay:300ms] hover:z-50 pointer-events-auto">
+          <div className="transform rotate-6 bg-white p-2 pb-10 shadow-2xl rounded-sm w-[220px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
             <div className="w-full aspect-square bg-gray-200 overflow-hidden rounded">
               <img src="/photo4.png" alt="memory 4" className="w-full h-full object-cover" />
             </div>
@@ -114,8 +114,8 @@ function PasscodePage() {
         </div>
 
         {/* Bottom Left */}
-        <div className="absolute bottom-4 left-2 md:bottom-20 md:left-24 opacity-0 animate-fadeInUp [animation-delay:500ms] hover:z-50 pointer-events-auto">
-          <div className="transform rotate-12 bg-white p-1.5 md:p-2 pb-6 md:pb-10 shadow-2xl rounded-sm w-[100px] md:w-[190px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+        <div className="absolute bottom-20 left-24 opacity-0 animate-fadeInUp [animation-delay:500ms] hover:z-50 pointer-events-auto">
+          <div className="transform rotate-12 bg-white p-2 pb-10 shadow-2xl rounded-sm w-[190px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
             <div className="w-full aspect-square bg-gray-200 overflow-hidden rounded">
               <img src="/photo5.png" alt="memory 5" className="w-full h-full object-cover" />
             </div>
@@ -123,8 +123,8 @@ function PasscodePage() {
         </div>
 
         {/* Bottom Right */}
-        <div className="absolute bottom-12 md:bottom-12 right-2 md:right-24 opacity-0 animate-fadeInUp [animation-delay:700ms] hover:z-50 pointer-events-auto">
-          <div className="transform -rotate-12 bg-white p-1.5 md:p-2 pb-6 md:pb-10 shadow-2xl rounded-sm w-[110px] md:w-[210px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+        <div className="absolute bottom-12 -right-6 opacity-0 animate-fadeInUp [animation-delay:700ms] hover:z-50 pointer-events-auto">
+          <div className="transform -rotate-12 bg-white p-2 pb-10 shadow-2xl rounded-sm w-[210px] transition-transform duration-500 hover:rotate-0 hover:scale-105">
             <div className="w-full aspect-[4/5] bg-gray-200 overflow-hidden rounded">
               <img src="/photo6.png" alt="memory 6" className="w-full h-full object-cover" />
             </div>
@@ -132,16 +132,16 @@ function PasscodePage() {
         </div>
       </div>
 
-      <div className="w-full max-w-5xl flex gap-12 flex-col md:flex-row items-center justify-center relative z-10 py-10 md:py-0">
+      <div className="w-full max-w-5xl flex gap-12 flex-row items-start justify-center relative z-10">
 
         {/* Left Side: Photo */}
-        <div className="relative z-10 mx-auto md:mx-0 opacity-0 animate-fadeInUp [animation-delay:900ms] flex flex-col gap-6 md:gap-14 items-center">
+        <div className="relative z-10 mx-0 opacity-0 animate-fadeInUp [animation-delay:900ms] flex flex-col gap-14">
           
           {/* Main Original Image */}
-          <div className="transform rotate-0 md:-rotate-12 hover:rotate-0 transition-transform duration-300 z-10 hover:z-30 w-full flex justify-center">
-            <div className="bg-white p-3 md:p-4 pb-10 md:pb-14 shadow-2xl rounded-sm w-[220px] md:w-[260px] h-[260px] md:h-[300px] relative">
+          <div className="transform -rotate-12 hover:rotate-0 transition-transform duration-300 z-10 hover:z-30">
+            <div className="bg-white p-4 pb-14 shadow-2xl rounded-sm w-[260px] h-[300px] relative">
               <div className="absolute -top-6 -right-6 text-blue-300 drop-shadow-lg z-20 animate-wiggle">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="#a5d8ff" stroke="#a5d8ff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="md:w-[50px] md:h-[50px]">   
+                  <svg width="50" height="50" viewBox="0 0 24 24" fill="#a5d8ff" stroke="#a5d8ff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">   
                       <path d="M4 22L12 15L20 22V14C20 14 15 18 12 15C9 18 4 14 4 14V22Z" />
                       <circle cx="12" cy="7" r="5" fill="#a5d8ff" />
                   </svg>
@@ -152,14 +152,14 @@ function PasscodePage() {
               </div>
             </div>
 
-            <div className="absolute -bottom-8 -left-4 md:-left-8 text-[40px] md:text-[60px] drop-shadow-lg transition z-20 animate-wiggle">
+            <div className="absolute -bottom-8 -left-8 text-[60px] drop-shadow-lg transition z-20 animate-wiggle">
               🧸
             </div>
           </div>
 
           {/* Additional Image below Teddy */}
-          <div className="transform rotate-0 md:rotate-6 hover:rotate-0 transition-transform duration-300 z-10 hover:z-30 w-full flex justify-center mt-4 md:mt-0">
-            <div className="bg-white p-3 md:p-4 pb-10 md:pb-14 shadow-2xl rounded-sm w-[220px] md:w-[260px] h-[260px] md:h-[300px] relative">
+          <div className="transform rotate-6 hover:rotate-0 transition-transform duration-300 z-10 hover:z-30">
+            <div className="bg-white p-4 pb-14 shadow-2xl rounded-sm w-[260px] h-[300px] relative">
               <div className="w-full h-full bg-gray-200 overflow-hidden rounded"> 
                 {/* Fallback to photo1.png or change the src accordingly */}
                 <img src="/photo7.png" alt="memory 1" className="w-full h-full object-cover" />
@@ -169,23 +169,23 @@ function PasscodePage() {
         </div>
 
         {/* Right Side: Passcode */}
-        <div className="flex flex-col items-center flex-1 w-full max-w-[400px] relative opacity-0 animate-fadeInUp [animation-delay:1100ms]">
+        <div className="flex flex-col items-center flex-1 w-full max-w-[400px] relative opacity-0 animate-fadeInUp [animation-delay:1100ms] mt-10">
           <h2 className="text-white text-4xl mb-6 font-bold tracking-wider text-center drop-shadow-md">
             Entre a passcode
           </h2>
 
-          <div className="flex gap-3 md:gap-4 mb-6 md:mb-8">
+          <div className="flex gap-4 mb-8">
             {[...Array(4)].map((_, i) => (
               <div
                 key={i}
-                className={`w-14 h-14 md:w-16 md:h-16 bg-white border-4 border-white rounded-xl flex items-center justify-center text-4xl md:text-5xl text-[#a40000] font-black shadow-inner overflow-hidden transition-all duration-200 ${passcode[i] ? 'scale-110 shadow-pink-200 shadow-md' : 'scale-100'}`}
+                className={`w-16 h-16 bg-white border-4 border-white rounded-xl flex items-center justify-center text-5xl text-[#a40000] font-black shadow-inner overflow-hidden transition-all duration-200 ${passcode[i] ? 'scale-110 shadow-pink-200 shadow-md' : 'scale-100'}`}
               >
                 {passcode[i] ? '*' : ''}
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-3 gap-x-4 md:gap-x-6 gap-y-4 max-w-[300px]">      
+          <div className="grid grid-cols-3 gap-x-6 gap-y-4 max-w-[300px]">      
             {['1', '2', '3', '4', '5', '6', '7', '8', '9', '⌫', '0', 'Next'].map((item) => (
               <button
                 key={item}
@@ -195,7 +195,7 @@ function PasscodePage() {
                    else handleKeyPress(item);
                 }}
                 disabled={isVerifying || (item === 'Next' && passcode.length < 4)}
-                className={`w-16 h-16 md:w-20 md:h-20 bg-[#fde9e9] rounded-full text-[#a40000] ${item === 'Next' || item === '⌫' ? 'text-xl md:text-2xl font-bold' : 'text-3xl md:text-4xl font-black'} shadow-lg hover:bg-white active:scale-95 hover:shadow-xl transition-all flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed`}
+                className={`w-20 h-20 bg-[#fde9e9] rounded-full text-[#a40000] ${item === 'Next' || item === '⌫' ? 'text-2xl font-bold' : 'text-4xl font-black'} shadow-lg hover:bg-white active:scale-95 hover:shadow-xl transition-all flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 {item}
               </button>
