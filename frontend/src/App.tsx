@@ -292,7 +292,7 @@ function GiftPage() {
                      {num === 3 && "Sweet Smile 😊"}
                      {num === 4 && "Looking beautiful 💛"}
                      {num === 5 && "Pretty as always 🌸"}
-                     {num === 6 && "My everything ❤️"}
+                     {num === 6 && "Everything ❤️"}
                    </div>
                  </div>
                </div>
@@ -344,19 +344,19 @@ function GiftPage() {
               <div className="text-[150px] md:text-[200px] text-center drop-shadow-2xl">🎂</div>
             ) : (
               <img 
-                src="/cake.png" 
+                src={blown ? "/cake-blown.png" : "/cake.png"} 
                 alt="Birthday Cake" 
-                className="w-full h-auto"
-                onError={() => setImageError(true)}
+                className={`w-full h-auto transition-all duration-1000 ${blown ? 'drop-shadow-none' : 'drop-shadow-xl'}`}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (blown && target.src.includes('cake-blown.png')) {
+                    target.src = '/cake.png';
+                    target.style.filter = 'brightness(0.7) grayscale(0.3)';
+                  } else {
+                    setImageError(true);
+                  }
+                }}
               />
-            )}
-            
-            {!blown && (
-              <div className={`absolute top-[18%] left-[20%] w-[60%] h-[20%] flex justify-between px-2 transition-all duration-500 origin-bottom ${fadeOutWish ? 'opacity-0 scale-y-0 -translate-y-4' : 'opacity-100'}`}>
-                 {[...Array(5)].map((_, i) => (
-                    <div key={i} className="text-3xl md:text-5xl animate-bounce" style={{ animationDelay: `${i * 100}ms` }}>🔥</div>
-                 ))}
-              </div>
             )}
           </div>
 
