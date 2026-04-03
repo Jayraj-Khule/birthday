@@ -270,7 +270,7 @@ function GiftPage() {
           {['first_photo.jpeg', 'Second.jpeg', 'Third.jpeg', 'fourth.jpeg', 'fifth.jpeg', 'sixth.jpeg'].map((fileName, idx) => {
              const num = idx + 1;
              return (
-             <div key={num} className="relative z-10 w-full flex flex-col md:flex-row items-center justify-center opacity-0 animate-fadeInUp mb-8 md:mb-0" style={{ animationDelay: `${idx * 200}ms`, animationFillMode: 'forwards' }}>
+             <div key={num} className="relative z-10 w-full flex flex-col md:flex-row items-center justify-center mb-8 md:mb-0 pb-4">
                
                {/* Wrapper: Stacked on mobile, alternating on desktop */}
                <div className={`w-full md:w-1/2 flex justify-center ${idx % 2 === 0 ? 'md:justify-end md:pr-12 md:order-1' : 'md:justify-start md:pl-12 md:order-2'}`}>
