@@ -47,14 +47,14 @@ function PasscodePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#a40000] flex items-center justify-center p-4 selection:bg-white text-white font-['Comic_Neue'] relative">
-      <div className="w-full max-w-5xl flex gap-12 flex-col md:flex-row items-center justify-center md:items-start reltaive">
+    <div className="min-h-[100dvh] bg-[#a40000] flex flex-col items-center justify-start md:justify-center p-4 selection:bg-white text-white font-['Comic_Neue'] relative overflow-x-hidden overflow-y-auto">
+      <div className="w-full max-w-5xl flex gap-8 md:gap-12 flex-col md:flex-row items-center justify-center relative py-10 md:py-0">
         
         {/* Left Side: Photo */}
-        <div className="relative transform md:-rotate-2 hover:rotate-0 transition duration-300 z-10 mx-auto md:mx-0">
-          <div className="bg-white p-4 pb-16 shadow-2xl rounded-sm w-[300px] h-[350px] relative">
-            <div className="absolute -top-6 -right-6 text-blue-300 drop-shadow-lg z-20">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="#a5d8ff" stroke="#a5d8ff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <div className="relative transform rotate-0 md:-rotate-2 hover:rotate-0 transition duration-300 z-10 w-full flex justify-center mt-4 md:mt-0">
+          <div className="bg-white p-3 md:p-4 pb-10 md:pb-16 shadow-2xl rounded-sm w-[240px] md:w-[300px] h-[280px] md:h-[350px] relative">
+            <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 text-blue-300 drop-shadow-lg z-20">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="#a5d8ff" stroke="#a5d8ff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="md:w-[60px] md:h-[60px]">
                     <path d="M4 22L12 15L20 22V14C20 14 15 18 12 15C9 18 4 14 4 14V22Z" />
                     <circle cx="12" cy="7" r="5" fill="#a5d8ff" />
                 </svg>
@@ -74,13 +74,13 @@ function PasscodePage() {
             </div>
           </div>
           
-          <div className="absolute -bottom-10 -left-10 text-[80px] drop-shadow-lg hover:scale-110 transition z-20">
+          <div className="absolute -bottom-8 -left-4 md:-bottom-10 md:-left-10 text-[60px] md:text-[80px] drop-shadow-lg hover:scale-110 transition z-20">
             🧸
           </div>
         </div>
 
         {/* Right Side: Passcode */}
-        <div className="flex flex-col items-center flex-1 w-full max-w-[400px] relative">
+        <div className="flex flex-col items-center flex-1 w-full max-w-[400px] relative mt-10 md:mt-0">
           <h2 className="text-white text-3xl md:text-4xl mb-6 font-bold tracking-wider text-center drop-shadow-md">
             Entre a passcode
           </h2>

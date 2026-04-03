@@ -90,7 +90,7 @@ function PasscodePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#a40000] flex items-center justify-center p-4 selection:bg-white text-white font-['Comic_Neue'] relative overflow-x-hidden overflow-y-auto"> 
+    <div className="min-h-[100dvh] bg-[#a40000] flex flex-col items-center justify-start md:justify-center p-4 selection:bg-white text-white font-['Comic_Neue'] relative overflow-x-hidden overflow-y-auto"> 
       <FloatingBackground />
 
       {/* Background Scattered Polaroids */}
