@@ -270,44 +270,64 @@ function GiftPage() {
           {['first_photo.jpeg', 'Second.jpeg', 'Third.jpeg', 'fourth.jpeg', 'fifth.jpeg', 'sixth.jpeg'].map((fileName, idx) => {
              const num = idx + 1;
              return (
-             <div key={num} className="relative z-10 w-full flex flex-row items-center justify-center mb-0 md:mb-0 pb-12">
+             <div key={num} className="relative z-10 w-full flex flex-row items-center justify-center pb-8 md:pb-12">
                
-               {/* Alternating layout wrapper */}
-               <div className={`w-1/2 flex ${idx % 2 === 0 ? 'justify-end pr-4 md:pr-12 order-1' : 'justify-start pl-4 md:pl-12 order-2'}`}>
-                 <div className={`bg-white p-2 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform ${idx % 2 === 0 ? '-rotate-3' : 'rotate-3'} hover:rotate-0 hover:scale-105 transition-all duration-300 w-[140px] sm:w-[260px] md:w-[400px]`}>
-                   <div className="w-full bg-gray-100 overflow-hidden rounded relative min-h-[120px] md:min-h-[250px] flex items-center justify-center">
-                      <img 
-                        src={`/${fileName}?v=2`} 
-                        alt={`Journey ${num}`} 
-                        className="w-full max-w-full h-auto object-contain max-h-[30vh] md:max-h-[400px] block" 
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          // Fallback removed to prevent the "math homework" replacing actual images during loading/caching delays
-                          target.style.display = 'none';
-                        }}
-                      />
-                   </div>
-                   <div className="text-center mt-3 md:mt-6 text-sm sm:text-xl md:text-3xl font-bold text-gray-700 tracking-wide">
-                     {num === 1 && "200X..."}
-                     {num === 2 && "Growing Up ✨"}
-                     {num === 3 && "Sweet Smile 😊"}
-                     {num === 4 && "Looking beautiful 💛"}
-                     {num === 5 && "Pretty as always 🌸"}
-                     {num === 6 && "Everything ❤️"}
-                     
-                     {/* Filename display constraint to mobile view for debugging/visibility */}
-                     <div className="text-[10px] sm:text-sm text-gray-400 font-normal mt-1 md:mt-2 md:hidden">
-                        {fileName}
+               {/* Left Half (Even Index) */}
+               <div className="w-1/2 flex justify-end pr-3 sm:pr-6 md:pr-12 relative">
+                 {idx % 2 === 0 && (
+                   <div className="bg-white p-2 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 w-[140px] sm:w-[220px] md:w-[350px]">
+                     <div className="w-full bg-gray-100 overflow-hidden rounded relative min-h-[120px] md:min-h-[250px] flex items-center justify-center">
+                        <img 
+                          src={`/${fileName}?v=3`} 
+                          alt={`Journey ${num}`} 
+                          className="w-full max-w-full h-auto object-contain max-h-[30vh] md:max-h-[400px] block" 
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
+                     </div>
+                     <div className="text-center mt-3 md:mt-6 text-sm sm:text-xl md:text-3xl font-bold text-gray-700 tracking-wide">
+                       {num === 1 && "200X..."}
+                       {num === 2 && "Growing Up ✨"}
+                       {num === 3 && "Sweet Smile 😊"}
+                       {num === 4 && "Looking beautiful 💛"}
+                       {num === 5 && "Pretty as always 🌸"}
+                       {num === 6 && "Everything ❤️"}
                      </div>
                    </div>
-                 </div>
+                 )}
                </div>
 
                {/* Center Timeline Dot for all screens */}
-               <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 md:w-6 md:h-6 bg-pink-400 rounded-full border-2 md:border-4 border-white shadow-md z-20"></div>
+               <div className="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 w-4 h-4 md:w-6 md:h-6 bg-pink-400 rounded-full border-2 md:border-4 border-white shadow-md z-20"></div>
 
-               {/* Empty spacer for the other half */}
-               <div className={`w-1/2 ${idx % 2 === 0 ? 'order-2' : 'order-1'}`}></div>
+               {/* Right Half (Odd Index) */}
+               <div className="w-1/2 flex justify-start pl-3 sm:pl-6 md:pl-12 relative">
+                 {idx % 2 !== 0 && (
+                   <div className="bg-white p-2 md:p-5 pb-6 md:pb-8 shadow-xl rounded-sm transform rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 w-[140px] sm:w-[220px] md:w-[350px]">
+                     <div className="w-full bg-gray-100 overflow-hidden rounded relative min-h-[120px] md:min-h-[250px] flex items-center justify-center">
+                        <img 
+                          src={`/${fileName}?v=3`} 
+                          alt={`Journey ${num}`} 
+                          className="w-full max-w-full h-auto object-contain max-h-[30vh] md:max-h-[400px] block" 
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
+                     </div>
+                     <div className="text-center mt-3 md:mt-6 text-sm sm:text-xl md:text-3xl font-bold text-gray-700 tracking-wide">
+                       {num === 1 && "200X..."}
+                       {num === 2 && "Growing Up ✨"}
+                       {num === 3 && "Sweet Smile 😊"}
+                       {num === 4 && "Looking beautiful 💛"}
+                       {num === 5 && "Pretty as always 🌸"}
+                       {num === 6 && "Everything ❤️"}
+                     </div>
+                   </div>
+                 )}
+               </div>
                
              </div>
           )})}
