@@ -375,7 +375,7 @@ function GiftPage() {
                 setBlown(false);
                 setFadeOutWish(false);
               }}
-              className="bg-transparent border-2 border-white text-white px-12 py-3 rounded-full text-xl md:text-2xl font-bold tracking-widest hover:bg-white hover:text-[#900000] hover:scale-105 active:scale-95 transition-all shadow-xl z-20 animate-fadeInUp [animation-delay:1500ms]"
+              className="bg-transparent border-2 border-white text-white px-12 py-3 mt-4 rounded-full text-xl md:text-2xl font-bold tracking-widest hover:bg-white hover:text-[#900000] hover:scale-105 active:scale-95 transition-all shadow-xl z-50 opacity-100 animate-fadeInUp"
             >
               Back
             </button>
