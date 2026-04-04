@@ -404,7 +404,7 @@ function GiftPage() {
         </h1>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-1 md:gap-12 w-full">
-          {[...Array(3)].map((_, i) => (
+          {[...Array(2)].map((_, i) => (
             <div 
               key={i}
               className="cursor-pointer hover:scale-110 active:scale-95 transition-transform duration-300 transform hover:-translate-y-4"
@@ -413,8 +413,6 @@ function GiftPage() {
                   setOpened(true);
                 } else if (i === 1) {
                   setShowJourney(true);
-                } else {
-                  console.log(`Clicked gift ${i + 1}`);
                 }
               }}
             >
