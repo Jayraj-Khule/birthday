@@ -56,36 +56,16 @@ function PasscodePage() {
   const handleNext = async () => {
     if (passcode.length === 4) {
       setIsVerifying(true);
-      try {
-        const response = await fetch('https://birthday-9xkf.onrender.com/api/verify-passcode', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ passcode }),
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-          playAudio();
-          setTimeout(() => navigate('/success'), 300);
-        } else {
-           // Reset if wrong
-           setTimeout(() => setPasscode(''), 500);
-        }
-      } catch (error) {
-        console.error("Failed to verify passcode with the backend", error);   
-        // Fallback if backend is down
-        if (passcode === '0504') {
-          playAudio();
-          setTimeout(() => navigate('/success'), 300);
-        } else {
-          setTimeout(() => setPasscode(''), 500);
-        }
-      } finally {
-        setIsVerifying(false);
+      
+      // Skip the backend fetch to make it instantaneous since Render free tier takes too long to wake up
+      if (passcode === '0504') {
+        playAudio();
+        setTimeout(() => navigate('/success'), 300);
+      } else {
+        setTimeout(() => setPasscode(''), 500);
       }
+      
+      setIsVerifying(false);
     }
   };
 
