@@ -361,12 +361,23 @@ function GiftPage() {
             )}
           </div>
 
-          {!blown && (
+          {!blown ? (
             <button 
               onClick={handleBlow}
               className={`bg-[#700000] border-2 border-white/20 text-white px-12 py-3 rounded-full text-2xl font-bold tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl z-20 ${fadeOutWish ? 'opacity-0 pointer-events-none' : 'opacity-100'} animate-fadeInUp [animation-delay:400ms]`}
             >
               BLOW
+            </button>
+          ) : (
+            <button 
+              onClick={() => {
+                setOpened(false);
+                setBlown(false);
+                setFadeOutWish(false);
+              }}
+              className="bg-transparent border-2 border-white text-white px-12 py-3 rounded-full text-xl md:text-2xl font-bold tracking-widest hover:bg-white hover:text-[#900000] hover:scale-105 active:scale-95 transition-all shadow-xl z-20 animate-fadeInUp [animation-delay:1500ms]"
+            >
+              Back
             </button>
           )}
 
